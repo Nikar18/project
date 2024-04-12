@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register</title>
+    <!-- Σύνδεση με το Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Σύνδεση με το jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="text-center mt-5">
+            <button id="loginBtn" class="btn btn-primary">Σύνδεση</button>
+            <button id="signupBtn" class="btn btn-secondary">Εγγραφή</button>
+        </div>
+
+        <div id="loginForm" class="mt-5">
+            <h2 class="text-center">Φόρμα Σύνδεσης</h2>
+
+            <form action="login.php" method="POST">
+                <div class="form-group">
+                    <label for="username_login">Όνομα Χρήστη:</label>
+                    <input type="text" class="form-control" id="username_login" name="username_login">
+                </div>
+                <div class="form-group">
+                    <label for="password_login">Κωδικός:</label>
+                    <input type="password" class="form-control" id="password_login" name="password_login">
+                </div>
+                <button type="submit" class="btn btn-primary">Σύνδεση</button>
+            </form>
+        </div>
+
+        <div id="signupForm" class="mt-5" style="display: none;">
+            <h2 class="text-center">Φόρμα Εγγραφής</h2>
+            <form action="register.php" method="POST">
+                <div class="form-group">
+                    <label for="username_register">Όνομα Χρήστη:</label>
+                    <input type="text" class="form-control" id="username_register" name="username_register">
+                </div>
+                <div class="form-group">
+                    <label for="password_register">Κωδικός:</label>
+                    <input type="password" class="form-control" id="password_register" name="password_register">
+                </div>
+                <button type="submit" class="btn btn-primary">Εγγραφή</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#loginBtn").click(function(){
+                $("#loginForm").show();
+                $("#signupForm").hide();
+            });
+
+            $("#signupBtn").click(function(){
+                $("#loginForm").hide();
+                $("#signupForm").show();
+            });
+        });
+    </script>
+</body>
+</html>
